@@ -34,9 +34,14 @@ void bracketCheck(const std::string& filePath) {
 			if (c == '{' || c == '[' || c == '(') {
 				bracketStack.push({c, i + 1});
 			}
-
 			else if (c == '}' || c == ']' || c == ')') {
+				// If stack = empty, then there is an invalid bracket
+				if (bracketStack.empty()) {
+					std::cout << "Invalid bracket " << c << "found at " << filePath << ":" << lineNumber << ":" << i + 1 << "." << std::endl;
+					return;
+				}
 
+				
 			}
 		}
 	}
