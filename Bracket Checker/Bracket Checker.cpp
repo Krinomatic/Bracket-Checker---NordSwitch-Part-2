@@ -35,7 +35,9 @@ void bracketCheck(const std::string& filePath) {
 				bracketStack.push({c, i + 1});
 			}
 
-			else if (c == '}')
+			else if (c == '}' || c == ']' || c == ')') {
+
+			}
 		}
 	}
 }
